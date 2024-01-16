@@ -4,6 +4,11 @@ import { RandomAvatar } from "react-random-avatars";
 import "./multiselect.scss";
 import { data } from "../../util/data";
 
+interface ItemProps{
+  name:string,
+  id:number,
+}
+
 const Multiselect = () => {
   const [inputValue, setInputValue] = useState("");
   const [options, setOptions] = useState(data);
@@ -15,12 +20,12 @@ const Multiselect = () => {
   const wrapperRef: any = useRef(null);
   const searchBoxRef = useRef(null);
 
-  const onSelectItem = (item: any) => {
+  const onSelectItem = (item: ItemProps) => {
     const newSelectedValues = [...selectedValues, item];
     setSelectedValues(newSelectedValues);
 
     const newOptions = options.filter(
-      (option: any) => option.name !== item.name
+      (option: ItemProps) => option.name !== item.name
     );
     setFilteredOptions(newOptions);
     setOptions(newOptions);
@@ -37,9 +42,9 @@ const Multiselect = () => {
     setFilteredOptions(filteredOptions);
   };
 
-  const onRemoveSelectedItem = (item: { name: string; id: number }) => {
+  const onRemoveSelectedItem = (item: ItemProps) => {
     const newSelectedValues = selectedValues.filter(
-      (value: any) => value.name !== item.name
+      (value: ItemProps) => value.name !== item.name
     );
     setSelectedValues(newSelectedValues);
     setFilteredOptions([...filteredOptions, item]);
@@ -85,7 +90,7 @@ const Multiselect = () => {
       <div className="search-wrapper-input">
         {selectedValues &&
           selectedValues.length > 0 &&
-          selectedValues.map((option: any, i: any) => (
+          selectedValues.map((option: ItemProps, i: number) => (
             <span key={i} className="search-wrapper-input-selected-chips">
               <RandomAvatar name={option.name} size={25} />
               <span className="search-wrapper-input-selected-chips-text">
