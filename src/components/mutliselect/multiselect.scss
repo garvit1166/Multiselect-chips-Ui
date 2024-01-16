@@ -1,0 +1,73 @@
+.search-wrapper{
+    padding: 1rem;
+    background-color: rgb(17, 16, 16);
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    min-height: 40%;
+    flex-direction: column;
+   
+    &-input{
+            background: white;
+            padding: 2%;
+            border-radius: 15px;
+            // align-items: center;
+            display: flex;    
+            flex-wrap: wrap;
+            margin-inline: 3px;
+            margin :auto;
+            
+           
+
+        &-box{
+            border: none;
+            outline: none;
+            margin-left:40px;
+            &:focus{
+                border: none;
+            }
+        }
+
+        &-selected-chips{
+            background-color: rgb(212, 203, 203);
+            height: fit-content;
+            min-width: max-content;
+            display: inline-flex;
+            align-items: center;
+            margin-inline: 3px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            font-family: monospace;
+            color: rgb(14, 12, 12);
+
+            &-text{
+                margin-inline: 3px;
+            }
+            &-icon{
+                margin-right: 8px;
+            }
+        }
+    }
+    &-list{
+        background-color: rgb(255, 255, 255);
+        overflow-y:scroll;
+        max-height: 30vh;
+        width:100%;
+        font-family: monospace;
+        border:2px;
+        border-top: 0;
+        border-style:solid;
+        border-color:rgb(216, 203, 203);
+        ;
+        &-options{
+            list-style: none;
+            &-value{
+                &:hover{
+                    background-color: rgb(212, 203, 203);
+                }
+            }
+        }
+    }
+}
