@@ -1,16 +1,18 @@
 .search-wrapper{
     padding: 1rem;
     background-color: rgb(17, 16, 16);
-    min-width: 100%;
     display: flex;
+    max-width: 80%;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
     min-height: 40%;
     flex-direction: column;
+    min-width: 40%;
    
     &-input{
             background: white;
+            max-width: 80%;
             padding: 2%;
             border-radius: 15px;
             // align-items: center;
